@@ -1,0 +1,7 @@
+#content {
+    background-color: #F0F0F0;
+}
+
+::ng-deep snack-bar-container simple-snack-bar .mat-simple-snackbar-action {
+    color: rgba(255,255,255,.7);
+}

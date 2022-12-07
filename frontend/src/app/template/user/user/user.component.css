@@ -1,0 +1,32 @@
+#content {
+    height: 100vh;
+}
+
+.mat-card-header-text {
+    width: 100%;
+    margin-left: -1.75vh;
+}
+
+.mat-column-name {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+}
+
+.mat-column-username {
+    flex: 0 0 25% !important;
+    width: 25% !important;
+}
+
+.mat-column-action {
+    flex: 0 0 25% !important;
+    width: 25% !important;
+}
+
+::ng-deep .col-username .mat-sort-header-container, ::ng-deep .col-action .mat-sort-header-container {
+    display: flex;
+    justify-content: center;
+}
+
+::ng-deep snack-bar-container simple-snack-bar .mat-simple-snackbar-action {
+    color: rgba(255, 255, 255, 0.7);
+}

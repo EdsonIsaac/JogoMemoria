@@ -1,0 +1,50 @@
+<div class="mat-dialog">
+
+    <form [formGroup]="form" *ngIf="form" (ngSubmit)="submit()">
+        <h1 mat-dialog-title class="fw-bold" *ngIf="!this.data">Cadastrar Usuário</h1>
+        <h1 mat-dialog-title class="fw-bold" *ngIf="this.data && this.data.user">Editar Usuário</h1>
+
+        <div class="mat-dialog-content">
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Nome</mat-label>
+                        <input matInput name="name" formControlName="name">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-2">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Usuário</mat-label>
+                        <input matInput name="username" formControlName="username">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-2" *ngIf="(this.data && this.data.user.username === this.currentUser.username) || (!this.data)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-2" *ngIf="(this.data && this.data.user.username !== this.currentUser.username) || (!this.data)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Situação</mat-label>
+                        <mat-select name="enabled" formControlName="enabled">
+                            <mat-option [value]="true">Ativado</mat-option>
+                            <mat-option [value]="false">Desativado</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div mat-dialog-actions layout="row" class="mat-dialog-actions d-flex justify-content-end">
+            <button type="button" mat-button mat-dialog-close>Cancelar</button>
+            <button type="submit" mat-button class="btn-success" [disabled]="form && !form.valid">OK</button>
+        </div>
+    </form>
+</div>

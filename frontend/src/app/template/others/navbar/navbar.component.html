@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <a routerLink="/" class="text-white">Jogo da Memória</a>
+    <span class="spacer"></span>
+
+    <div *ngIf="!this.user">
+        <a mat-button routerLink="/login" class="text-white">Entrar</a>
+    </div>
+    
+    <div *ngIf="this.user">
+        <button mat-button [matMenuTriggerFor]="menu" class="text-white">{{this.user.name.split(' ')[0]}}</button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="/cards">Painel de Cartas</a>
+            <a mat-menu-item routerLink="/users">Painel de Usuários</a>
+            <button mat-menu-item (click)="logout()">Sair</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>

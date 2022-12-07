@@ -1,0 +1,12 @@
+.h-100-vh {
+    height: 100vh;
+}
+
+.mat-card-header-text {
+    width: 100%;
+    margin-left: -1.75vh;
+}
+
+::ng-deep snack-bar-container simple-snack-bar .mat-simple-snackbar-action {
+    color: rgba(255, 255, 255, 0.7);
+}

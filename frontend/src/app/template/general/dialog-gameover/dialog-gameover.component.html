@@ -1,0 +1,16 @@
+<div class="mat-dialog">
+    <h1 mat-dialog-title class="fw-bold">Game Over</h1>
+
+    <div class="mat-dialog-content">
+        <div class="text-center">
+            <i class="fas fa-trophy fa-6x py-3"></i>
+            <h4 class="mb-0 fw-bold">Fim do jogo. Deseja reiniciar?</h4>
+        </div>
+        
+    </div>
+
+    <div mat-dialog-actions layout="row" class="mat-dialog-actions d-flex justify-content-end">
+        <button type="button" mat-button mat-dialog-close>Cancelar</button>
+        <button type="button" mat-button class="btn-success" (click)="restart()">Reiniciar</button>
+    </div>
+</div>
