@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+.link
+    cursor: pointer
+
+.mat-mdc-snack-bar-container.fail
+    --mdc-snackbar-container-color: #dc3545
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87)
+
+.mat-mdc-snack-bar-container.success
+    --mdc-snackbar-container-color: #198754
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87)
+
+.mdc-notched-outline__notch
+    border-right: none
