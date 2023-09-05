@@ -38,16 +38,18 @@
   <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
     <mat-card class="w-full" *ngFor="let user of users">
       <mat-card-content>
-        <div class="mb-4 flex justify-center">
-          <img
-            [src]="
-              user.photo
-                ? api + '/files/search?name=' + user.photo.name
-                : '/assets/images/users.png'
-            "
-            [ngClass]="user.photo ? 'rounded-full' : ''"
-            width="128px"
-          />
+        <div class="mb-4">
+          <div class="flex justify-center">
+            <img
+              [src]="
+                user.photo
+                  ? api + '/files/search?name=' + user.photo.name
+                  : '/assets/images/users.png'
+              "
+              [ngClass]="user.photo ? 'rounded-full' : ''"
+              width="128px"
+            />
+          </div>
         </div>
         <div class="mb-4">
           <p style="margin: 0">{{ user.name }}</p>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -21,7 +21,7 @@ import { SelectImageComponent } from '../select-image/select-image.component';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.sass'],
 })
-export class UserComponent {
+export class UserComponent implements OnInit {
   api!: string;
   authentication!: Authentication | null;
   form!: FormGroup;

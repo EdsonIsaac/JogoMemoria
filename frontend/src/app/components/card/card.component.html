@@ -1,1 +1,57 @@
-<p>card works!</p>
+<app-breadcrumbs></app-breadcrumbs>
+
+<div class="w-full">
+  <mat-card>
+    <mat-card-content>
+      <div class="mb-4">
+        <h2 style="margin: 0" class="text-center">Cadastrar Carta</h2>
+      </div>
+
+      <div class="mb-4">
+        <form [formGroup]="form" *ngIf="form">
+          <div class="mb-4">
+            <div *ngIf="!image" class="flex justify-center">
+              <img src="assets/images/cards.png" width="128px" />
+            </div>
+            <div *ngIf="image" class="flex justify-center">
+              <img [src]="image.data" class="rounded" style="width: 150px; height: 200px;" />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="text-center">
+              <button mat-icon-button type="button" [matMenuTriggerFor]="menu">
+                <mat-icon>camera_alt</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="addImage()">
+                  <mat-icon>search</mat-icon>
+                  <span>Selecionar Foto</span>
+                </button>
+                <button mat-menu-item (click)="removeImage()" *ngIf="image">
+                  <mat-icon>delete</mat-icon>
+                  <span>Remover Foto</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="flex justify-end gap-4">
+        <button
+          class="px-8 py-2 rounded text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800"
+          (click)="back()"
+        >
+          Voltar
+        </button>
+        <button
+          class="px-8 py-2 rounded text-white bg-green-600 hover:bg-green-700 active:bg-green-800"
+          (click)="submit()"
+        >
+          Salvar
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

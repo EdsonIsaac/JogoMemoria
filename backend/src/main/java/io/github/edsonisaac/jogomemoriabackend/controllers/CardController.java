@@ -29,7 +29,7 @@ public class CardController implements AbstractController<Card, CardDTO> {
     @DeleteMapping("/{id}")
     @ResponseStatus(OK)
     @PreAuthorize("hasAnyAuthority('SCOPE_ADMINISTRATION', 'SCOPE_SUPPORT')")
-    public void delete(UUID id) {
+    public void delete(@PathVariable UUID id) {
         service.delete(id);
     }
 

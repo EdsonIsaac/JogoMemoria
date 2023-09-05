@@ -15,6 +15,10 @@ export class CardService {
 
   constructor(private _http: HttpClient) {}
 
+  delete(id: string) {
+    return this._http.delete(`${this._baseURL}/${id}`);
+  }
+
   findAll(page: number, size: number, sort: string, direction: string) {
     return this._http.get<Page<Card>>(this._baseURL, {
       params: {
@@ -28,6 +32,25 @@ export class CardService {
 
   get() {
     return this._subject.asObservable();
+  }
+
+  save(card: Card, image: any) {
+    const form = new FormData();
+
+    form.append(
+      'card',
+      new Blob([JSON.stringify(card)], { type: 'application/json' })
+    );
+
+    if (image) {
+      form.append(
+        'image',
+        new Blob([image], { type: 'multipart/form-data' }),
+        'image.png'
+      );
+    }
+
+    return this._http.post<Card>(this._baseURL, form);
   }
 
   set(card: Card | null) {

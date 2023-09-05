@@ -25,6 +25,10 @@ export class RedirectService {
     });
   }
 
+  toCard(id: string) {
+    this._router.navigate([`${this._baseURL}/cards/${id}`]);
+  }
+
   toCardsList() {
     this._router.navigate([`${this._baseURL}/cards`]);
   }
@@ -42,7 +46,7 @@ export class RedirectService {
   }
 
   toUser(id: string) {
-    this._router.navigate([`${this._baseURL}/users/${id}`])
+    this._router.navigate([`${this._baseURL}/users/${id}`]);
   }
 
   toUsersList() {

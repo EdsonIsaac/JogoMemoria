@@ -32,6 +32,7 @@ import { SelectImageComponent } from './select-image/select-image.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
+import { CardDeleteComponent } from './card-delete/card-delete.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UsersComponent } from './users/users.component';
     LoadingComponent,
     NoContentComponent,
     SelectImageComponent,
+    CardDeleteComponent,
   ],
   imports: [
     CommonModule,
